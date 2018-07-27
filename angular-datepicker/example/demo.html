@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Bootstrap Datepicker Demo</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="angular-bootstrap-datepicker.css" />
+</head>
+<body data-ng-app="demo">
+    <div>
+        <div data-ng-controller="AppCtrl">
+            <input id="datepicker" type="text" data-ng-datepicker data-ng-dateoptions="datepickerOptions" data-ng-model="date">
+            <input id="datepickerMirror" type="text" data-ng-model="date">
+            <input type="button" ng-click="cda()"/>
+        </div>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="../../../admin/lib/bootstrap/js/bootstrap.js"></script>
+
+    <script src="../../angular.min.js"></script>
+    <script src="angular-bootstrap-datepicker-20180727.js"></script>
+    <script type="application/javascript">
+    app = angular.module('demo', ['ng-bootstrap-datepicker']);
+
+    app.controller('AppCtrl', function($scope) {
+        $scope.datepickerOptions = {
+            format: 'yyyy-mm-dd',
+            language: '',
+           startDate: "2012-10-01",
+            endDate: "2020-10-31",
+            weekStart: 0,
+           multidate: true,
+
+        }
+
+        $scope.cda=function(){
+        $scope.date='"2018-05-05", "2018-05-07"';
+        }
+    });
+    </script>
+</body>
+</html>
